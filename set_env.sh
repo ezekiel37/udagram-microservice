@@ -1,0 +1,9 @@
+POSTGRES_USERNAME=ezekiel
+POSTGRES_PASSWORD=Easyboy001
+POSTGRES_HOST=database-1.c8liyinwtwt4.us-east-1.rds.amazonaws.com
+POSTGRES_DB=postgres
+AWS_BUCKET=arn:aws:s3:::ezekielgram
+AWS_REGION=us-east-2
+AWS_PROFILE=default
+JWT_SECRET=hello
+URL=http://localhost:8100
