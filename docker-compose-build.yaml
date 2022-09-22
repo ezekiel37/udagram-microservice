@@ -2,17 +2,17 @@ version: "4"
 services:
   reverseproxy:
     build:
-      context: ./udagram-reverseproxy
+      context: ./udagram_reverseproxy
     image: reverseproxy
   backend_user:
     build:
-      context: ./udagram-api-user
+      context: ./udagram_api_user
     image: udagram-api-user
   backend_feed:
     build:
-      context: ./udagram-api-feed
+      context: ./udagram_api_feed
     image: udagram-api-feed
   frontend:
     build:
-      context: ./udagram-frontend
-    image: udagram-frontend:local
+      context: ./udagram_frontend
+    image: udagram-frontend

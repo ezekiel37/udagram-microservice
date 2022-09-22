@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-api-user
+  labels:
+    app: udagram-api-user
+spec:
+  selector:
+    matchLabels:
+      app: udagram-api-user
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: udagram-api-user
+    spec:
+      containers:
+      - name: udagram-api-user
+        image: ezekielhub/udagram-api-user:udagram-api-user
+        env:
+          - name: POSTGRES_DB
+            value: postgres
+          - name: POSTGRES_USERNAME
+            value: ezekiel
+          - name: POSTGRES_PASSWORD
+            value: Easyboy001
+          - name: POSTGRES_HOST
+            value: database-1.c8liyinwtwt4.us-east-1.rds.amazonaws.com
+          - name: AWS_BUCKET
+            value: arn:aws:s3:::ezekielgram
+          - name: AWS_REGION
+            value: us-east-1
+          - name: AWS_PROFILE
+            value: default
+          - name: JWT_SECRET
+            value: hello
+          - name: URL
+            value: http://localhost:8100
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
